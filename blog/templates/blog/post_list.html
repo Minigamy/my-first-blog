@@ -6,17 +6,12 @@
         <div>
             <h1><a href="/">Nikita's blog</a></h1>
         </div>
-
-        <div>
-            <p>published: 29.03.2021, 17:24</p>
-            <h2><a href="">My first post</a></h2>
-            <p>Я работаю в Первой линии. Я работник Первой линии. Я и есть Первая линия.</p>
-        </div>
-
-        <div>
-            <p>published: 14.06.2014, 12:14</p>
-            <h2><a href="">My second post</a></h2>
-            <p>Я ЕСТЬ СМЕРТЬ!</p>
-        </div>
+        {% for post in posts %}
+            <div>
+                <p>published: {{ post.published_date }}</p>
+                <h1><a href="">{{ post.title }}</a></h1>
+                <p>{{ post.text|linebreaksbr }}</p>
+            </div>
+{% endfor %}
     </body>
 </html>
